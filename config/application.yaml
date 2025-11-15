@@ -14,6 +14,18 @@ application:
       path: 'https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt'
       type: easylist  
 
+    - name: 'AD-J'
+      path: 'https://raw.githubusercontent.com/jk278/Ad-J/main/Ad-J.txt'
+      type: easylist
+
+    - name: 'GOODBYEADS-白名单'
+      path: 'https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/allow.txt'
+      type: easylist
+
+    - name: 'halflife-list'
+      path: 'https://cdn.jsdelivr.net/gh/sbwml/halflife-list@master/ad.txt'
+      type: easylist  
+      
   # 输出配置
   output:
     #文件头配置，将自动作为注释添加至每个规则文件开始
@@ -22,14 +34,14 @@ application:
       ChengZhouCR AdBlock ${type}
       Last Modified: ${date}
       Total Size: ${total}
-      ${}
+      Desc: ${desc}
       Homepage: https://github.com/chengzhouCR/ad-filters-subscriber/
       
     files:
       - name: smartdns.conf    #必要参数: 文件名
         type: smartdns         #必要参数: 文件类型: easylist、dnsmasq、clash、smartdns、hosts
         file_header:           #可选参数: 文件头配置，将自动作为注释添加至每个规则文件开始 (此处优先于 output.file_header)
-        desc: 'ChengZhouCR自用的去广告列表，主要用于去除简中环境的广告。规则合并自上游：AWAvenue-Ads-Rule、xinggsf mv、jiekouAD。规则较为精简，每日自动更新。'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
+        desc: 'ChengZhouCR自用的SmartDNS去广告规则，规则较为精简，每日自动更新。规则源：AWAvenue Ads Rule、xinggsf mv、jiekouAD、AD-J、GOODBYEADS-白名单、halflife-list。'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
         filter:
           - basic              #基本规则，不包含任何控制、匹配符号, 可以转换为 hosts
           - wildcard           #通配规则，仅使用通配符
