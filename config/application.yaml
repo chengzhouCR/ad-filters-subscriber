@@ -15,7 +15,7 @@ application:
       type: easylist
 
     - name: 'lingeringsound'
-      path: 'https://raw.githubusercontent.com/lingeringsound/adblock_auto/main/Rules/adblock_auto_lite.txt'
+      path: 'https://raw.githubusercontent.com/lingeringsound/adblock_auto/main/Rules/adblock_auto.txt'
       type: easylist  
       
   # 输出配置
@@ -26,16 +26,52 @@ application:
       ChengZhouCR AdBlock ${type}
       Last Modified: ${date}
       Total Size: ${total}
-      Homepage: https://github.com/chengzhouCR/ad-filters-subscriber/
+      Homepage: https://github.com/chengzhouCR/ChengZhouCR-AdBlock
       Description: ${desc}
       
     files:
-      - name: smartdns.conf    #必要参数: 文件名
+      - name: adblock-smartdns.conf    #必要参数: 文件名
         type: smartdns         #必要参数: 文件类型: easylist、dnsmasq、clash、smartdns、hosts
         file_header:           #可选参数: 文件头配置，将自动作为注释添加至每个规则文件开始 (此处优先于 output.file_header)
-        desc: 'ChengZhouCR自用的SmartDNS去广告规则，规则较为精简，每日自动更新。规则源：AWAvenue Ads Rule、jiekouAD、AD-J、halflife-list、lingeringsound规则。'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
+        desc: 'ChengZhouCR自用的路由器去广告规则，规则较为精简，每日自动更新。规则源：AWAvenue Ads Rule、jiekouAD、AD-J、halflife-list、lingeringsound规则。'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
         filter:
           - basic              #基本规则，不包含任何控制、匹配符号, 可以转换为 hosts
-          - wildcard           #通配规则，仅使用通配符
-          - unknown            #其他规则，如使用了正则、高级修饰符号的规则，这些规则目前无法转换为其他格式
-                               #可选参数: 限定此文件使用的规则源，如果不指定则使用 input 中的所有规则源   
+          #- wildcard           #通配规则，仅使用通配符
+          #- unknown            #其他规则，如使用了正则、高级修饰符号的规则，这些规则目前无法转换为其他格式
+                               #可选参数: 限定此文件使用的规则源，如果不指定则使用 input 中的所有规则源
+
+      - name: adblock-easylist.txt
+        type: easylist        
+        file_header:         
+        desc: 'ChengZhouCR自用的路由器去广告规则，规则较为精简，每日自动更新。规则源：AWAvenue Ads Rule、jiekouAD、AD-J、halflife-list、lingeringsound规则。' 
+        filter:
+          - basic              
+          #- wildcard           
+          #- unknown
+
+      - name: adblock-dnsmasq.conf
+        type: dnsmasq        
+        file_header:         
+        desc: 'ChengZhouCR自用的路由器去广告规则，规则较为精简，每日自动更新。规则源：AWAvenue Ads Rule、jiekouAD、AD-J、halflife-list、lingeringsound规则。' 
+        filter:
+          - basic              
+          #- wildcard           
+          #- unknown
+
+      - name: adblock-hosts
+        type: hosts        
+        file_header:         
+        desc: 'ChengZhouCR自用的路由器去广告规则，规则较为精简，每日自动更新。规则源：AWAvenue Ads Rule、jiekouAD、AD-J、halflife-list、lingeringsound规则。' 
+        filter:
+          - basic              
+          #- wildcard           
+          #- unknown
+
+      - name: adblock-clash.yaml
+        type: clash        
+        file_header:         
+        desc: 'ChengZhouCR自用的路由器去广告规则，规则较为精简，每日自动更新。规则源：AWAvenue Ads Rule、jiekouAD、AD-J、halflife-list、lingeringsound规则。' 
+        filter:
+          - basic              
+          #- wildcard           
+          #- unknown
