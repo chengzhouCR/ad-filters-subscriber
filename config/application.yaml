@@ -33,12 +33,16 @@ application:
       path: 'https://raw.githubusercontent.com/790953214/qy-Ads-Rule/main/black.txt'
       type: easylist
 
-    - name: '茯苓规则'
-      path: 'https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingBlockList.txt'
+    - name: '茯苓规则-白名单'
+      path: 'https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingAllowList.txt'
       type: easylist
 
-    - name: '茯苓规则-允许列表'
-      path: 'https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingAllowList.txt'
+    - name: '茯苓规则'
+      path: 'https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingBlockList.txt'
+      type: easylist  
+
+    - name: '10007_auto'
+      path: 'https://raw.githubusercontent.com/lingeringsound/10007_auto/master/adb.txt'
       type: easylist  
 
     - name: '217heidai'
@@ -54,7 +58,7 @@ application:
       Last Modified: ${date}
       Total Size: ${total}
       Homepage: https://github.com/chengzhouCR/AdBlock-Rules
-      Description: 自用的路由器去广告规则，规则较为精简，每日自动更新。上游规则源：AWAvenue Ads Rule、jiekouAD、halflife规则、不是DD啊、海哥规则、晴雅规则、茯苓规则、217heidai规则精简版。
+      Description: 自用的路由器去广告规则，每日自动更新，上游规则：AWAvenue Ads Rule、jiekouAD、halflife规则、不是DD啊、海哥规则、晴雅规则、茯苓规则、217heidai规则精简版、10007_auto。
       
     files:
       - name: smartdns.conf    
