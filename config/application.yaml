@@ -6,7 +6,11 @@ application:
       concurrency: 128
       provider:
         - 1.1.1.1
-        - 8.8.8.8    
+        - 8.8.8.8
+
+    tracking:
+      enable: true
+      path: logs/tracking.list    
   
   # 输入配置
   input:
@@ -18,35 +22,35 @@ application:
       type: easylist
 
     - name: 'halflife-list'
-      path: 'https://cdn.jsdelivr.net/gh/sbwml/halflife-list@master/ad-pc.txt'
+      path: 'https://cdn.jsdelivr.net/gh/sbwml/halflife-list@master/ad.txt'
       type: easylist
 
-    - name: 'DD-AD'
+    - name: 'DD-AD去广告规则'
       path: 'https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt'
       type: easylist
 
-    - name: '海哥拦截规则'
+    - name: '海哥去广告规则'
       path: 'https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt'
       type: easylist
 
-    - name: '晴雅拦截规则'
+    - name: '晴雅去广告规则'
       path: 'http://rssv.cn/adguard/api.php?type=black'
       type: easylist
 
-    - name: '茯苓广告规则-白名单'
-      path: 'https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingAllowList.txt'
-      type: easylist
-
-    - name: '茯苓广告规则'
+    - name: '茯苓去广告规则'
       path: 'https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingBlockList.txt'
       type: easylist  
 
-    - name: '10007_auto'
+    - name: '10007自动规则'
       path: 'https://raw.githubusercontent.com/lingeringsound/10007_auto/master/adb.txt'
       type: easylist  
 
-    - name: '217heidai'
+    - name: '217heidai规则'
       path: 'https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt'
+      type: easylist
+
+    - name: 'who520'
+      path: 'https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt'
       type: easylist  
       
   # 输出配置
@@ -58,7 +62,7 @@ application:
       Last Modified: ${date}
       Total Size: ${total}
       Homepage: https://github.com/chengzhouCR/AdBlock-Rules
-      Description: 自用的路由器去广告规则，每日自动更新，上游规则：AWAvenue Ads Rule、jiekouAD、halflife规则、DD-AD规则、海哥拦截规则、晴雅拦截规则、茯苓广告规则、217heidai规则、10007_auto规则。
+      Description: 自用的路由器去广告规则，每日自动更新，上游规则：AWAvenue Ads Rule、jiekouAD、halflife规则、DD-AD规则、海哥拦截规则、晴雅拦截规则、茯苓拦截规则、217heidai规则、10007自动规则、那个谁520规则。
       
     files:
       - name: smartdns.conf    
