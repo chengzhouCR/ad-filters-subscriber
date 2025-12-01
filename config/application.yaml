@@ -16,11 +16,7 @@ application:
   input:
     - name: 'AWAvenue-Ads-Rules'               
       path: 'https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt'   
-
-    - name: 'adblockfilters'
-      path: 'https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt'
-      type: easylist  
-
+  
     - name: 'DD-AD规则'
       path: 'https://raw.githubusercontent.com/afwfv/DD-AD/refs/heads/release/DD-AD.txt'
       type: easylist
@@ -50,7 +46,7 @@ application:
       Last Modified: ${date}
       Total Size: ${total}
       Homepage: https://github.com/chengzhouCR/AdBlock-Rules
-      Description: 自用的路由器去广告规则，每日自动更新，上游规则：AWAvenue Ads Rule、adblockfilters、DD-AD规则、茯苓广告规则、who520规则。
+      Description: 自用的路由器去广告规则，每日自动更新，上游规则：AWAvenue Ads Rule、DD-AD规则、茯苓广告规则、who520规则。
       
     files:
       - name: smartdns.conf    
